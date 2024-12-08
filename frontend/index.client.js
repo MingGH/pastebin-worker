@@ -258,7 +258,7 @@ window.addEventListener('DOMContentLoaded', () => {
       data: fd,
       processData: false,
       success: () => {
-        alert('Delete successfully')
+        alert('删除成功')
       },
       error: handleError,
     })
@@ -293,19 +293,19 @@ window.addEventListener('DOMContentLoaded', () => {
       resetCopyButtons()
       button.textContent = 'Copied'
     } catch (err) {
-      alert('Failed to copy content')
+      alert('复制内容失败')
     }
   })
 
   function resetCopyButtons() {
-    $('.copy-button').text('Copy')
+    $('.copy-button').text('复制')
   }
 
   function handleError(error) {
     const status = error.status || ''
-    let statusText = error.statusText === 'error' ? 'Unknown error' : error.statusText
+    let statusText = error.statusText === 'error' ? '未知错误' : error.statusText
     const responseText = error.responseText || ''
-    alert(`Error ${status}: ${statusText}\n${responseText}\nView your console for more information`)
+    alert(`Error ${status}: ${statusText}\n${responseText}\n查看控制台了解更多信息`)
     $('#submit-button').addClass('enabled')
   }
 
